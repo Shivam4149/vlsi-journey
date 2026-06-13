@@ -1,0 +1,22 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Sat Jun 13 07:55:16 2026
+[*]
+[dumpfile] "C:\Users\Kuldeep\vlsi-journey\week1\day1\inverter.vcd"
+[dumpfile_mtime] "Sat Jun 13 07:48:43 2026"
+[dumpfile_size] 526
+[savefile] "C:\Users\Kuldeep\vlsi-journey\week1\day1\tb_inverter.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -217 -217
+*-14.537124 20000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_inverter.
+[sst_width] 197
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@28
+tb_inverter.in
+tb_inverter.dut.out
+[pattern_trace] 1
+[pattern_trace] 0

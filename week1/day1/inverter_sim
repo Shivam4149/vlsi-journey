@@ -1,0 +1,76 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000013135afbd90 .scope module, "tb_inverter" "tb_inverter" 2 8;
+ .timescale -9 -12;
+L_0000013135a17360 .functor NOT 1, v0000013135af91f0_0, C4<0>, C4<0>, C4<0>;
+v0000013135afb4e0_0 .net "expected", 0 0, L_0000013135a17360;  1 drivers
+v0000013135af91f0_0 .var "in", 0 0;
+v0000013135afa090_0 .net "out", 0 0, L_0000013135afa130;  1 drivers
+S_0000013135afb350 .scope module, "dut" "inverter" 2 23, 3 5 0, S_0000013135afbd90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0000013135afa130 .functor NOT 1, v0000013135af91f0_0, C4<0>, C4<0>, C4<0>;
+v0000013135afbf20_0 .net "in", 0 0, v0000013135af91f0_0;  1 drivers
+v00000131359f2d70_0 .net "out", 0 0, L_0000013135afa130;  alias, 1 drivers
+    .scope S_0000013135afbd90;
+T_0 ;
+    %vpi_call 2 34 "$dumpfile", "inverter.vcd" {0 0 0};
+    %vpi_call 2 35 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000013135afbd90 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000013135afbd90;
+T_1 ;
+    %vpi_call 2 41 "$display", "====================" {0 0 0};
+    %vpi_call 2 42 "$display", "time|in|out|expected" {0 0 0};
+    %vpi_call 2 43 "$display", "====================" {0 0 0};
+    %vpi_call 2 45 "$monitor", "%4t ns| %b| %b| out should be %b", $time, v0000013135af91f0_0, v0000013135afa090_0, v0000013135afb4e0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000013135af91f0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000013135af91f0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 4, 0, 32;
+T_1.0 %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/1xz T_1.1, 5;
+    %jmp/1 T_1.1, 4;
+    %pushi/vec4 1, 0, 32;
+    %sub;
+    %load/vec4 v0000013135af91f0_0;
+    %inv;
+    %store/vec4 v0000013135af91f0_0, 0, 1;
+    %delay 10000, 0;
+    %jmp T_1.0;
+T_1.1 ;
+    %pop/vec4 1;
+    %load/vec4 v0000013135afa090_0;
+    %load/vec4 v0000013135af91f0_0;
+    %inv;
+    %cmp/e;
+    %jmp/0xz  T_1.2, 6;
+    %vpi_call 2 65 "$display", "PASS: inverter output correct at end of simulation" {0 0 0};
+    %jmp T_1.3;
+T_1.2 ;
+    %vpi_call 2 67 "$display", "FAIL : Something is wrong!" {0 0 0};
+T_1.3 ;
+    %vpi_call 2 70 "$display", "=================================" {0 0 0};
+    %vpi_call 2 71 "$display", "Simulation complete!" {0 0 0};
+    %vpi_call 2 72 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_inverter.v";
+    "inverter.v";
