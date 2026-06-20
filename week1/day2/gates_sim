@@ -1,0 +1,244 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000013b541cd760 .scope module, "tb_gates" "tb_gates" 2 7;
+ .timescale -9 -12;
+v0000013b5423eaa0_0 .var "a", 0 0;
+v0000013b5423ef00_0 .var "b", 0 0;
+v0000013b5423e8c0_0 .var/i "errors", 31 0;
+v0000013b5423f180_0 .var/i "i", 31 0;
+v0000013b5423dba0_0 .net "y_and", 0 0, L_0000013b541cbd10;  1 drivers
+v0000013b5423f0e0_0 .net "y_nand", 0 0, L_0000013b541cbb50;  1 drivers
+v0000013b5423dc40_0 .net "y_nor", 0 0, L_0000013b541cbca0;  1 drivers
+v0000013b5423ea00_0 .net "y_or", 0 0, L_0000013b541cb920;  1 drivers
+S_0000013b541cd8f0 .scope module, "u_and" "and_from_nand" 2 17, 3 13 0, S_0000013b541cd760;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+v0000013b54235080_0 .net "a", 0 0, v0000013b5423eaa0_0;  1 drivers
+v0000013b54235300_0 .net "b", 0 0, v0000013b5423ef00_0;  1 drivers
+v0000013b54235120_0 .net "nand_out", 0 0, L_0000013b541cb7d0;  1 drivers
+v0000013b54235760_0 .net "y", 0 0, L_0000013b541cbd10;  alias, 1 drivers
+S_0000013b541cefa0 .scope module, "inst1" "nand_gate" 3 19, 4 1 0, S_0000013b541cd8f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000013b541cba00 .functor AND 1, v0000013b5423eaa0_0, v0000013b5423ef00_0, C4<1>, C4<1>;
+L_0000013b541cb7d0 .functor NOT 1, L_0000013b541cba00, C4<0>, C4<0>, C4<0>;
+v0000013b541a32e0_0 .net *"_ivl_0", 0 0, L_0000013b541cba00;  1 drivers
+v0000013b541cf130_0 .net "a", 0 0, v0000013b5423eaa0_0;  alias, 1 drivers
+v0000013b541cf1d0_0 .net "b", 0 0, v0000013b5423ef00_0;  alias, 1 drivers
+v0000013b54235440_0 .net "y", 0 0, L_0000013b541cb7d0;  alias, 1 drivers
+S_0000013b5418e540 .scope module, "inst2" "not_from_nand" 3 20, 3 4 0, S_0000013b541cd8f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+v0000013b54234fe0_0 .net "a", 0 0, L_0000013b541cb7d0;  alias, 1 drivers
+v0000013b54234ea0_0 .net "y", 0 0, L_0000013b541cbd10;  alias, 1 drivers
+S_0000013b5418e6d0 .scope module, "inst1" "nand_gate" 3 10, 4 1 0, S_0000013b5418e540;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000013b541cb840 .functor AND 1, L_0000013b541cb7d0, L_0000013b541cb7d0, C4<1>, C4<1>;
+L_0000013b541cbd10 .functor NOT 1, L_0000013b541cb840, C4<0>, C4<0>, C4<0>;
+v0000013b54234b80_0 .net *"_ivl_0", 0 0, L_0000013b541cb840;  1 drivers
+v0000013b54234900_0 .net "a", 0 0, L_0000013b541cb7d0;  alias, 1 drivers
+v0000013b54234ae0_0 .net "b", 0 0, L_0000013b541cb7d0;  alias, 1 drivers
+v0000013b54234c20_0 .net "y", 0 0, L_0000013b541cbd10;  alias, 1 drivers
+S_0000013b541d6920 .scope module, "u_nand" "nand_gate" 2 15, 4 1 0, S_0000013b541cd760;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000013b541cb6f0 .functor AND 1, v0000013b5423eaa0_0, v0000013b5423ef00_0, C4<1>, C4<1>;
+L_0000013b541cbb50 .functor NOT 1, L_0000013b541cb6f0, C4<0>, C4<0>, C4<0>;
+v0000013b542351c0_0 .net *"_ivl_0", 0 0, L_0000013b541cb6f0;  1 drivers
+v0000013b54235260_0 .net "a", 0 0, v0000013b5423eaa0_0;  alias, 1 drivers
+v0000013b542353a0_0 .net "b", 0 0, v0000013b5423ef00_0;  alias, 1 drivers
+v0000013b54235800_0 .net "y", 0 0, L_0000013b541cbb50;  alias, 1 drivers
+S_0000013b541d6ab0 .scope module, "u_nor" "nor_gate" 2 16, 4 11 0, S_0000013b541cd760;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000013b541cbbc0 .functor OR 1, v0000013b5423eaa0_0, v0000013b5423ef00_0, C4<0>, C4<0>;
+L_0000013b541cbca0 .functor NOT 1, L_0000013b541cbbc0, C4<0>, C4<0>, C4<0>;
+v0000013b54234d60_0 .net *"_ivl_0", 0 0, L_0000013b541cbbc0;  1 drivers
+v0000013b542354e0_0 .net "a", 0 0, v0000013b5423eaa0_0;  alias, 1 drivers
+v0000013b54235580_0 .net "b", 0 0, v0000013b5423ef00_0;  alias, 1 drivers
+v0000013b54235620_0 .net "y", 0 0, L_0000013b541cbca0;  alias, 1 drivers
+S_0000013b541d5b00 .scope module, "u_or" "or_from_nand" 2 18, 3 23 0, S_0000013b541cd760;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+v0000013b5423de20_0 .net "a", 0 0, v0000013b5423eaa0_0;  alias, 1 drivers
+v0000013b5423edc0_0 .net "b", 0 0, v0000013b5423ef00_0;  alias, 1 drivers
+v0000013b5423e000_0 .net "not_a", 0 0, L_0000013b541cb680;  1 drivers
+v0000013b5423f7c0_0 .net "not_b", 0 0, L_0000013b541cb8b0;  1 drivers
+v0000013b5423da60_0 .net "y", 0 0, L_0000013b541cb920;  alias, 1 drivers
+S_0000013b541d5c90 .scope module, "inst1" "not_from_nand" 3 29, 3 4 0, S_0000013b541d5b00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+v0000013b54234e00_0 .net "a", 0 0, v0000013b5423eaa0_0;  alias, 1 drivers
+v0000013b54234f40_0 .net "y", 0 0, L_0000013b541cb680;  alias, 1 drivers
+S_0000013b5418dab0 .scope module, "inst1" "nand_gate" 3 10, 4 1 0, S_0000013b541d5c90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000013b541cba70 .functor AND 1, v0000013b5423eaa0_0, v0000013b5423eaa0_0, C4<1>, C4<1>;
+L_0000013b541cb680 .functor NOT 1, L_0000013b541cba70, C4<0>, C4<0>, C4<0>;
+v0000013b542349a0_0 .net *"_ivl_0", 0 0, L_0000013b541cba70;  1 drivers
+v0000013b54234cc0_0 .net "a", 0 0, v0000013b5423eaa0_0;  alias, 1 drivers
+v0000013b54234a40_0 .net "b", 0 0, v0000013b5423eaa0_0;  alias, 1 drivers
+v0000013b542356c0_0 .net "y", 0 0, L_0000013b541cb680;  alias, 1 drivers
+S_0000013b5418dc40 .scope module, "inst2" "not_from_nand" 3 30, 3 4 0, S_0000013b541d5b00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+v0000013b5423eb40_0 .net "a", 0 0, v0000013b5423ef00_0;  alias, 1 drivers
+v0000013b5423ebe0_0 .net "y", 0 0, L_0000013b541cb8b0;  alias, 1 drivers
+S_0000013b541a2a40 .scope module, "inst1" "nand_gate" 3 10, 4 1 0, S_0000013b5418dc40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000013b541cbc30 .functor AND 1, v0000013b5423ef00_0, v0000013b5423ef00_0, C4<1>, C4<1>;
+L_0000013b541cb8b0 .functor NOT 1, L_0000013b541cbc30, C4<0>, C4<0>, C4<0>;
+v0000013b5423db00_0 .net *"_ivl_0", 0 0, L_0000013b541cbc30;  1 drivers
+v0000013b5423f360_0 .net "a", 0 0, v0000013b5423ef00_0;  alias, 1 drivers
+v0000013b5423e780_0 .net "b", 0 0, v0000013b5423ef00_0;  alias, 1 drivers
+v0000013b5423e640_0 .net "y", 0 0, L_0000013b541cb8b0;  alias, 1 drivers
+S_0000013b541a2bd0 .scope module, "inst3" "nand_gate" 3 31, 4 1 0, S_0000013b541d5b00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000013b541cb610 .functor AND 1, L_0000013b541cb680, L_0000013b541cb8b0, C4<1>, C4<1>;
+L_0000013b541cb920 .functor NOT 1, L_0000013b541cb610, C4<0>, C4<0>, C4<0>;
+v0000013b5423ed20_0 .net *"_ivl_0", 0 0, L_0000013b541cb610;  1 drivers
+v0000013b5423e820_0 .net "a", 0 0, L_0000013b541cb680;  alias, 1 drivers
+v0000013b5423ec80_0 .net "b", 0 0, L_0000013b541cb8b0;  alias, 1 drivers
+v0000013b5423e960_0 .net "y", 0 0, L_0000013b541cb920;  alias, 1 drivers
+    .scope S_0000013b541cd760;
+T_0 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0000013b5423e8c0_0, 0, 32;
+    %end;
+    .thread T_0;
+    .scope S_0000013b541cd760;
+T_1 ;
+    %vpi_call 2 21 "$dumpfile", "gates.vcd" {0 0 0};
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000013b541cd760 {0 0 0};
+    %vpi_call 2 24 "$display", "=========================================================" {0 0 0};
+    %vpi_call 2 25 "$display", " A  B | NAND NOR  AND  OR  | Expected NAND NOR AND OR" {0 0 0};
+    %vpi_call 2 26 "$display", "=========================================================" {0 0 0};
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0000013b5423f180_0, 0, 32;
+T_1.0 ;
+    %load/vec4 v0000013b5423f180_0;
+    %cmpi/s 4, 0, 32;
+    %jmp/0xz T_1.1, 5;
+    %load/vec4 v0000013b5423f180_0;
+    %pad/s 2;
+    %split/vec4 1;
+    %store/vec4 v0000013b5423ef00_0, 0, 1;
+    %store/vec4 v0000013b5423eaa0_0, 0, 1;
+    %delay 10000, 0;
+    %load/vec4 v0000013b5423eaa0_0;
+    %load/vec4 v0000013b5423ef00_0;
+    %and;
+    %inv;
+    %load/vec4 v0000013b5423eaa0_0;
+    %load/vec4 v0000013b5423ef00_0;
+    %or;
+    %inv;
+    %load/vec4 v0000013b5423eaa0_0;
+    %load/vec4 v0000013b5423ef00_0;
+    %and;
+    %load/vec4 v0000013b5423eaa0_0;
+    %load/vec4 v0000013b5423ef00_0;
+    %or;
+    %vpi_call 2 33 "$display", " %b  %b |  %b    %b    %b    %b  |    %b      %b    %b   %b", v0000013b5423eaa0_0, v0000013b5423ef00_0, v0000013b5423f0e0_0, v0000013b5423dc40_0, v0000013b5423dba0_0, v0000013b5423ea00_0, S<3,vec4,u1>, S<2,vec4,u1>, S<1,vec4,u1>, S<0,vec4,u1> {4 0 0};
+    %load/vec4 v0000013b5423f0e0_0;
+    %load/vec4 v0000013b5423eaa0_0;
+    %load/vec4 v0000013b5423ef00_0;
+    %and;
+    %inv;
+    %cmp/ne;
+    %jmp/0xz  T_1.2, 6;
+    %vpi_call 2 39 "$display", "  *** FAIL: NAND wrong for a=%b b=%b ***", v0000013b5423eaa0_0, v0000013b5423ef00_0 {0 0 0};
+    %load/vec4 v0000013b5423e8c0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0000013b5423e8c0_0, 0, 32;
+T_1.2 ;
+    %load/vec4 v0000013b5423dc40_0;
+    %load/vec4 v0000013b5423eaa0_0;
+    %load/vec4 v0000013b5423ef00_0;
+    %or;
+    %inv;
+    %cmp/ne;
+    %jmp/0xz  T_1.4, 6;
+    %vpi_call 2 43 "$display", "  *** FAIL: NOR wrong for a=%b b=%b ***", v0000013b5423eaa0_0, v0000013b5423ef00_0 {0 0 0};
+    %load/vec4 v0000013b5423e8c0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0000013b5423e8c0_0, 0, 32;
+T_1.4 ;
+    %load/vec4 v0000013b5423dba0_0;
+    %load/vec4 v0000013b5423eaa0_0;
+    %load/vec4 v0000013b5423ef00_0;
+    %and;
+    %cmp/ne;
+    %jmp/0xz  T_1.6, 6;
+    %vpi_call 2 47 "$display", "  *** FAIL: AND (from NAND) wrong for a=%b b=%b ***", v0000013b5423eaa0_0, v0000013b5423ef00_0 {0 0 0};
+    %load/vec4 v0000013b5423e8c0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0000013b5423e8c0_0, 0, 32;
+T_1.6 ;
+    %load/vec4 v0000013b5423ea00_0;
+    %load/vec4 v0000013b5423eaa0_0;
+    %load/vec4 v0000013b5423ef00_0;
+    %or;
+    %cmp/ne;
+    %jmp/0xz  T_1.8, 6;
+    %vpi_call 2 51 "$display", "  *** FAIL: OR (from NAND) wrong for a=%b b=%b ***", v0000013b5423eaa0_0, v0000013b5423ef00_0 {0 0 0};
+    %load/vec4 v0000013b5423e8c0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0000013b5423e8c0_0, 0, 32;
+T_1.8 ;
+    %load/vec4 v0000013b5423f180_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0000013b5423f180_0, 0, 32;
+    %jmp T_1.0;
+T_1.1 ;
+    %vpi_call 2 56 "$display", "=========================================================" {0 0 0};
+    %load/vec4 v0000013b5423e8c0_0;
+    %cmpi/e 0, 0, 32;
+    %jmp/0xz  T_1.10, 4;
+    %vpi_call 2 58 "$display", " RESULT: ALL TESTS PASSED (0 errors)" {0 0 0};
+    %jmp T_1.11;
+T_1.10 ;
+    %vpi_call 2 60 "$display", " RESULT: %0d TEST(S) FAILED", v0000013b5423e8c0_0 {0 0 0};
+T_1.11 ;
+    %vpi_call 2 61 "$display", "=========================================================" {0 0 0};
+    %vpi_call 2 63 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "tb_gates.v";
+    "universal_gates.v";
+    "gates_basic.v";

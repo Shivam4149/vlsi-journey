@@ -1,0 +1,118 @@
+$date
+	Sat Jun 20 10:36:21 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_gates $end
+$var wire 1 ! y_or $end
+$var wire 1 " y_nor $end
+$var wire 1 # y_nand $end
+$var wire 1 $ y_and $end
+$var reg 1 % a $end
+$var reg 1 & b $end
+$var integer 32 ' errors [31:0] $end
+$var integer 32 ( i [31:0] $end
+$scope module u_and $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var wire 1 $ y $end
+$var wire 1 ) nand_out $end
+$scope module inst1 $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var wire 1 ) y $end
+$upscope $end
+$scope module inst2 $end
+$var wire 1 ) a $end
+$var wire 1 $ y $end
+$scope module inst1 $end
+$var wire 1 ) a $end
+$var wire 1 ) b $end
+$var wire 1 $ y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module u_nand $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var wire 1 # y $end
+$upscope $end
+$scope module u_nor $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var wire 1 " y $end
+$upscope $end
+$scope module u_or $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var wire 1 ! y $end
+$var wire 1 * not_b $end
+$var wire 1 + not_a $end
+$scope module inst1 $end
+$var wire 1 % a $end
+$var wire 1 + y $end
+$scope module inst1 $end
+$var wire 1 % a $end
+$var wire 1 % b $end
+$var wire 1 + y $end
+$upscope $end
+$upscope $end
+$scope module inst2 $end
+$var wire 1 & a $end
+$var wire 1 * y $end
+$scope module inst1 $end
+$var wire 1 & a $end
+$var wire 1 & b $end
+$var wire 1 * y $end
+$upscope $end
+$upscope $end
+$scope module inst3 $end
+$var wire 1 + a $end
+$var wire 1 * b $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1+
+1*
+1)
+b0 (
+b0 '
+0&
+0%
+0$
+1#
+1"
+0!
+$end
+#10000
+1!
+0"
+0*
+1&
+b1 (
+#20000
+0+
+1*
+1%
+0&
+b10 (
+#30000
+1$
+0)
+0#
+0*
+1&
+b11 (
+#40000
+b100 (
